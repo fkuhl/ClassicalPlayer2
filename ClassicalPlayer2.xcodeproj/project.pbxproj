@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27108859261364550063EEDD /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27108858261364550063EEDD /* SearchField.swift */; };
+		27127FC62761040B0093E5D4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 27127FC52761040B0093E5D4 /* README.md */; };
 		271420D6270F43C2009B5B61 /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271420D5270F43C2009B5B61 /* PlaylistView.swift */; };
 		271420DA270F7C93009B5B61 /* PlaylistsListRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271420D9270F7C93009B5B61 /* PlaylistsListRView.swift */; };
 		27267F8525B3687600B1441E /* PiecesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27267F8425B3687600B1441E /* PiecesView.swift */; };
@@ -90,6 +91,7 @@
 
 /* Begin PBXFileReference section */
 		27108858261364550063EEDD /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
+		27127FC52761040B0093E5D4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		271420D5270F43C2009B5B61 /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
 		271420D9270F7C93009B5B61 /* PlaylistsListRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsListRView.swift; sourceTree = "<group>"; };
 		27267F8425B3687600B1441E /* PiecesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiecesView.swift; sourceTree = "<group>"; };
@@ -114,7 +116,6 @@
 		274157F22594F7B700A7CD7F /* ClassicalPlayer2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicalPlayer2UITests.swift; sourceTree = "<group>"; };
 		274157F42594F7B700A7CD7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		274158032594F7C800A7CD7F /* ClassicalPlayer2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClassicalPlayer2.entitlements; sourceTree = "<group>"; };
-		274158072594F80400A7CD7F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2741581C2595020B00A7CD7F /* ClassicalPlayer2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ClassicalPlayer2.xcdatamodel; sourceTree = "<group>"; };
 		274158462597B92C00A7CD7F /* LibraryReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryReporter.swift; sourceTree = "<group>"; };
 		274158472597B92C00A7CD7F /* ReportingStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportingStructures.swift; sourceTree = "<group>"; };
@@ -231,6 +232,7 @@
 		274157C42594F7B600A7CD7F = {
 			isa = PBXGroup;
 			children = (
+				27127FC52761040B0093E5D4 /* README.md */,
 				274157CF2594F7B600A7CD7F /* ClassicalPlayer2 */,
 				274157E62594F7B700A7CD7F /* ClassicalPlayer2Tests */,
 				274157F12594F7B700A7CD7F /* ClassicalPlayer2UITests */,
@@ -265,7 +267,6 @@
 				274157DE2594F7B600A7CD7F /* Info.plist */,
 				27DC4248261932B600996AF2 /* Launch Screen.storyboard */,
 				274157D62594F7B600A7CD7F /* Preview Content */,
-				274158072594F80400A7CD7F /* README.md */,
 				274158032594F7C800A7CD7F /* ClassicalPlayer2.entitlements */,
 			);
 			path = ClassicalPlayer2;
@@ -495,6 +496,7 @@
 			files = (
 				27DC4249261932B600996AF2 /* Launch Screen.storyboard in Resources */,
 				274157D82594F7B600A7CD7F /* Preview Assets.xcassets in Resources */,
+				27127FC62761040B0093E5D4 /* README.md in Resources */,
 				274157D52594F7B600A7CD7F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
