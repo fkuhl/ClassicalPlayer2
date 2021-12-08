@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Album" representedClassName="Album" codeGenerationType="class">
+        <attribute name="albumID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="artist" optional="YES" attributeType="String"/>
+        <attribute name="composer" optional="YES" attributeType="String"/>
+        <attribute name="genre" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="trackCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="year" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="pieces" optional="YES" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="Piece" inverseName="album" inverseEntity="Piece"/>
+        <relationship name="songs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Song" inverseName="album" inverseEntity="Song"/>
+        <userInfo>
+            <entry key="com.apple.syncservices.IdentityProperties" value=""/>
+        </userInfo>
+    </entity>
+    <entity name="Composer" representedClassName="Composer" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MediaLibraryInfo" representedClassName="MediaLibraryInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="albumCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="lastModifiedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="movementCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pieceCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="playlistCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="songCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Movement" representedClassName="Movement" syncable="YES" codeGenerationType="class">
+        <attribute name="duration" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="trackID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="trackURL" optional="YES" attributeType="URI"/>
+        <relationship name="piece" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Piece" inverseName="movements" inverseEntity="Piece"/>
+    </entity>
+    <entity name="Piece" representedClassName="Piece" codeGenerationType="class">
+        <attribute name="albumID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="artist" optional="YES" attributeType="String"/>
+        <attribute name="artistID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="composer" attributeType="String"/>
+        <attribute name="genre" optional="YES" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="trackID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="trackURL" optional="YES" attributeType="URI"/>
+        <relationship name="album" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Album" inverseName="pieces" inverseEntity="Album"/>
+        <relationship name="movements" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Movement" inverseName="piece" inverseEntity="Movement"/>
+        <userInfo>
+            <entry key="com.apple.syncservices.IdentityProperties" value=""/>
+        </userInfo>
+    </entity>
+    <entity name="Playlist" representedClassName="Playlist" syncable="YES" codeGenerationType="class">
+        <attribute name="albumID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="authorDisplayName" optional="YES" attributeType="String"/>
+        <attribute name="descriptionText" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="persistentID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="songs" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Song" inverseName="playlists" inverseEntity="Song"/>
+    </entity>
+    <entity name="Song" representedClassName="Song" syncable="YES" codeGenerationType="class">
+        <attribute name="albumID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="artist" optional="YES" attributeType="String"/>
+        <attribute name="composer" optional="YES" attributeType="String"/>
+        <attribute name="duration" optional="YES" attributeType="String"/>
+        <attribute name="persistentID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="trackURL" optional="YES" attributeType="URI"/>
+        <relationship name="album" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Album" inverseName="songs" inverseEntity="Album"/>
+        <relationship name="playlists" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Playlist" inverseName="songs" inverseEntity="Playlist"/>
+    </entity>
+    <elements>
+        <element name="Album" positionX="-350.563720703125" positionY="-503.3557739257812" width="128" height="73"/>
+        <element name="Composer" positionX="-369.292236328125" positionY="-138.9088134765625" width="128" height="44"/>
+        <element name="MediaLibraryInfo" positionX="-635.961181640625" positionY="-95.053955078125" width="128" height="14"/>
+        <element name="Movement" positionX="-651.3447265625" positionY="-314.4754028320312" width="128" height="104"/>
+        <element name="Piece" positionX="-672.032470703125" positionY="-624.2024536132812" width="128" height="179"/>
+        <element name="Playlist" positionX="-372.031982421875" positionY="-368.2296142578125" width="128" height="133"/>
+        <element name="Song" positionX="-58.67138671875" positionY="-496.4611206054688" width="128" height="178"/>
+    </elements>
+</model>
