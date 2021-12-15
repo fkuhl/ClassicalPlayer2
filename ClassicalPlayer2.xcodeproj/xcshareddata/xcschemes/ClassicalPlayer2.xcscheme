@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "274157CC2594F7B600A7CD7F"
                BuildableName = "ClassicalPlayer2.app"
-               BlueprintName = "ClassicalPlayer2"
+               BlueprintName = "ClassicalPlayer"
                ReferencedContainer = "container:ClassicalPlayer2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -68,7 +68,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "274157CC2594F7B600A7CD7F"
             BuildableName = "ClassicalPlayer2.app"
-            BlueprintName = "ClassicalPlayer2"
+            BlueprintName = "ClassicalPlayer"
             ReferencedContainer = "container:ClassicalPlayer2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -97,7 +97,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "274157CC2594F7B600A7CD7F"
             BuildableName = "ClassicalPlayer2.app"
-            BlueprintName = "ClassicalPlayer2"
+            BlueprintName = "ClassicalPlayer"
             ReferencedContainer = "container:ClassicalPlayer2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

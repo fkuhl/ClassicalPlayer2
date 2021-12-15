@@ -12,12 +12,12 @@ struct SidebarView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject private var musicPlayer: MusicPlayer
     ///Causes an item to be active when the view is created.
-    @State private var isDefaultItemActive = true
+    //@State private var isDefaultItemActive = true
 
     var body: some View {
         List {
-            NavigationLink(destination: PiecesView(sort: .composer),
-                           isActive: $isDefaultItemActive) {
+            NavigationLink(destination: PiecesView(sort: .composer)/*,
+                           isActive: $isDefaultItemActive*/) {
                 Label("Pieces by composer", systemImage: "music.quarternote.3")
             }
             NavigationLink(destination: AlbumsView()) {

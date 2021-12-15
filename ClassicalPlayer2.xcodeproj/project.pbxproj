@@ -102,7 +102,7 @@
 		2736501C25A4C42600F1F3FE /* PieceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieceView.swift; sourceTree = "<group>"; };
 		2736502225A60E8200F1F3FE /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		2736502A25A616D400F1F3FE /* MusicPublishers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPublishers.swift; sourceTree = "<group>"; };
-		274157CD2594F7B600A7CD7F /* ClassicalPlayer2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassicalPlayer2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		274157CD2594F7B600A7CD7F /* ClassicalPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClassicalPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		274157D02594F7B600A7CD7F /* ClassicalPlayer2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicalPlayer2App.swift; sourceTree = "<group>"; };
 		274157D22594F7B600A7CD7F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		274157D42594F7B600A7CD7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -243,7 +243,7 @@
 		274157CE2594F7B600A7CD7F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				274157CD2594F7B600A7CD7F /* ClassicalPlayer2.app */,
+				274157CD2594F7B600A7CD7F /* ClassicalPlayer.app */,
 				274157E32594F7B700A7CD7F /* ClassicalPlayer2Tests.xctest */,
 				274157EE2594F7B700A7CD7F /* ClassicalPlayer2UITests.xctest */,
 			);
@@ -394,9 +394,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		274157CC2594F7B600A7CD7F /* ClassicalPlayer2 */ = {
+		274157CC2594F7B600A7CD7F /* ClassicalPlayer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 274157F72594F7B700A7CD7F /* Build configuration list for PBXNativeTarget "ClassicalPlayer2" */;
+			buildConfigurationList = 274157F72594F7B700A7CD7F /* Build configuration list for PBXNativeTarget "ClassicalPlayer" */;
 			buildPhases = (
 				274157C92594F7B600A7CD7F /* Sources */,
 				274157CA2594F7B600A7CD7F /* Frameworks */,
@@ -406,9 +406,9 @@
 			);
 			dependencies = (
 			);
-			name = ClassicalPlayer2;
+			name = ClassicalPlayer;
 			productName = ClassicalPlayer2;
-			productReference = 274157CD2594F7B600A7CD7F /* ClassicalPlayer2.app */;
+			productReference = 274157CD2594F7B600A7CD7F /* ClassicalPlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
 		274157E22594F7B700A7CD7F /* ClassicalPlayer2Tests */ = {
@@ -482,7 +482,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				274157CC2594F7B600A7CD7F /* ClassicalPlayer2 */,
+				274157CC2594F7B600A7CD7F /* ClassicalPlayer */,
 				274157E22594F7B700A7CD7F /* ClassicalPlayer2Tests */,
 				274157ED2594F7B700A7CD7F /* ClassicalPlayer2UITests */,
 			);
@@ -603,12 +603,12 @@
 /* Begin PBXTargetDependency section */
 		274157E52594F7B700A7CD7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 274157CC2594F7B600A7CD7F /* ClassicalPlayer2 */;
+			target = 274157CC2594F7B600A7CD7F /* ClassicalPlayer */;
 			targetProxy = 274157E42594F7B700A7CD7F /* PBXContainerItemProxy */;
 		};
 		274157F02594F7B700A7CD7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 274157CC2594F7B600A7CD7F /* ClassicalPlayer2 */;
+			target = 274157CC2594F7B600A7CD7F /* ClassicalPlayer */;
 			targetProxy = 274157EF2594F7B700A7CD7F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -737,7 +737,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ClassicalPlayer2/ClassicalPlayer2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 32;
 				DEVELOPMENT_ASSET_PATHS = "\"ClassicalPlayer2/Preview Content\"";
 				DEVELOPMENT_TEAM = KRGB7TX9DU;
 				ENABLE_PREVIEWS = YES;
@@ -747,8 +747,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tyndalesoft.ClassicalPlayer2;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tyndalesoft.ClassicalPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -763,7 +763,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ClassicalPlayer2/ClassicalPlayer2.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 32;
 				DEVELOPMENT_ASSET_PATHS = "\"ClassicalPlayer2/Preview Content\"";
 				DEVELOPMENT_TEAM = KRGB7TX9DU;
 				ENABLE_PREVIEWS = YES;
@@ -773,8 +773,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tyndalesoft.ClassicalPlayer2;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tyndalesoft.ClassicalPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -878,7 +878,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		274157F72594F7B700A7CD7F /* Build configuration list for PBXNativeTarget "ClassicalPlayer2" */ = {
+		274157F72594F7B700A7CD7F /* Build configuration list for PBXNativeTarget "ClassicalPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				274157F82594F7B700A7CD7F /* Debug */,
