@@ -18,7 +18,7 @@ struct RegularWidthView: View {
                 .aspectRatio(contentMode: .fill)
                 .navigationTitle("")
                 .navigationBarHidden(true)
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
