@@ -84,7 +84,7 @@ struct CompactWidthView: View {
             if let currentTrack = musicPlayer.nowPlayingItem, let currentAlbum = albumFor(track: currentTrack, in: viewContext) {
                 AlbumView(album: currentAlbum)
             } else {
-                Text("Nothin' playin'")
+                Text("Nothing presently playing")
             }
         }
     }

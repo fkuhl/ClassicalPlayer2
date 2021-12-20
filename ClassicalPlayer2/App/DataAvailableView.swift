@@ -54,3 +54,17 @@ struct DataAvailableView: View {
                      secondaryButton: dontButton)
     }
 }
+
+struct DataAvailableView_Previews: PreviewProvider {
+    static var previews: some View {
+        let context = PersistenceController.preview.container.viewContext
+        
+        DataAvailableView()
+            .preferredColorScheme(.dark)
+            .previewLayout(.fixed(width: 960, height: 540))
+            .previewDevice("iPhone 8 Pro")
+            .environment(\.horizontalSizeClass, .regular)
+            .environment(\.managedObjectContext, context)
+            .environmentObject(MusicPlayer())
+    }
+}

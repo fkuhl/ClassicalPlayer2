@@ -19,7 +19,7 @@ struct MusicPlayerRView: View {
 
     var body: some View {
         HStack {
-            Text(musicPlayer.nowPlayingItem?.title ?? "[not set]")
+            Text(musicPlayer.nowPlayingItem?.title ?? "[nothing playing]")
                 .frame(width: 300)
                 .font(.body)
                 .lineLimit(3)
@@ -32,16 +32,19 @@ struct MusicPlayerRView: View {
                         Image(systemName: "pause.fill")
                             .font(.title)
                     }
+                    .disabled(musicPlayer.nowPlayingItem == nil)
                 default:
                     Button(action: playPlayer) {
                         Image(systemName: "play.fill")
                             .font(.title)
                     }
+                    .disabled(musicPlayer.nowPlayingItem == nil)
                 }
                 VStack {
                     Slider(value: $sliderTime,
                            in: sliderRange(),
                            onEditingChanged: sliderEditingChanged)
+                        .disabled(musicPlayer.nowPlayingItem == nil)
                     HStack {
                         Text(timeElapsed)
                         Spacer()

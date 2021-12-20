@@ -28,8 +28,9 @@ struct MusicPlayerView_Previews: PreviewProvider {
         
         MusicPlayerView()
             .preferredColorScheme(.dark)
-            .previewLayout(.sizeThatFits)
-            .previewDevice("iPhone 11 Pro Max")
+            .previewLayout(.fixed(width: 960, height: 540))
+            .previewDevice("iPhone 8 Pro")
+            .environment(\.horizontalSizeClass, .regular)
             .environment(\.managedObjectContext, context)
             .environmentObject(MusicPlayer())
     }

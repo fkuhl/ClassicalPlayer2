@@ -19,7 +19,7 @@ struct MusicPlayerCView: View {
 
     var body: some View {
         VStack {
-            Text(musicPlayer.nowPlayingItem?.title ?? "[not set]")
+            Text(musicPlayer.nowPlayingItem?.title ?? "[nothing playing]")
                 .font(.body)
                 .lineLimit(2)
                 .truncationMode(/*@START_MENU_TOKEN@*/.tail/*@END_MENU_TOKEN@*/)
@@ -32,17 +32,20 @@ struct MusicPlayerCView: View {
                             .font(.title)
                     }
                     .padding(.leading, 10)
+                    .disabled(musicPlayer.nowPlayingItem == nil)
                 default:
                     Button(action: playPlayer) {
                         Image(systemName: "play.fill")
                             .font(.title)
                     }
                     .padding(.leading, 10)
+                    .disabled(musicPlayer.nowPlayingItem == nil)
                 }
                 VStack {
                     Slider(value: $sliderTime,
                            in: sliderRange(),
                            onEditingChanged: sliderEditingChanged)
+                        .disabled(musicPlayer.nowPlayingItem == nil)
                     HStack {
                         Text(timeElapsed).font(.caption)
                         Spacer()

@@ -25,8 +25,8 @@ struct SidebarView: View {
             }
             NavigationLink(destination: nowPlayingAlbum) {
                 Label("Now Playing Album", systemImage: "square.stack")
-                    .disabled(MusicPlayer.player.nowPlayingItem != nil)
-            }
+                    
+            }.disabled(MusicPlayer.player.nowPlayingItem == nil)
             NavigationLink(destination: PiecesView(sort: .artist)) {
                 Label("Artists", systemImage: "person.2")
             }
@@ -49,7 +49,7 @@ struct SidebarView: View {
             if let currentTrack = musicPlayer.nowPlayingItem, let currentAlbum = albumFor(track: currentTrack, in: viewContext) {
                 AlbumView(album: currentAlbum)
             } else {
-                Text("Nothin' playin'")
+                Text("Nothing presently playing")
             }
         }
     }
