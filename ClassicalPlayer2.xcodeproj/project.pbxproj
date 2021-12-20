@@ -50,6 +50,7 @@
 		27721FB125A4B657000FC308 /* ComposersCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27721FB025A4B657000FC308 /* ComposersCView.swift */; };
 		27721FB625A4B993000FC308 /* ComposersCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27721FB525A4B993000FC308 /* ComposersCommon.swift */; };
 		277EC4BC25D8959C00A94E8F /* SongsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277EC4BB25D8959C00A94E8F /* SongsCommon.swift */; };
+		2784E81F2770E52B00879182 /* RunningInPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784E81E2770E52B00879182 /* RunningInPreview.swift */; };
 		2789EA39271B63D900CF654C /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2789EA38271B63D900CF654C /* LoadingView.swift */; };
 		278CBA5225A7752000550840 /* MusicPlayerCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278CBA5125A7752000550840 /* MusicPlayerCView.swift */; };
 		278CBA5725A78B0B00550840 /* AirPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278CBA5625A78B0B00550840 /* AirPlayView.swift */; };
@@ -140,6 +141,7 @@
 		27721FB025A4B657000FC308 /* ComposersCView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposersCView.swift; sourceTree = "<group>"; };
 		27721FB525A4B993000FC308 /* ComposersCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposersCommon.swift; sourceTree = "<group>"; };
 		277EC4BB25D8959C00A94E8F /* SongsCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCommon.swift; sourceTree = "<group>"; };
+		2784E81E2770E52B00879182 /* RunningInPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningInPreview.swift; sourceTree = "<group>"; };
 		2789EA38271B63D900CF654C /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		278CBA5125A7752000550840 /* MusicPlayerCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerCView.swift; sourceTree = "<group>"; };
 		278CBA5625A78B0B00550840 /* AirPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPlayView.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				27721F9325A0CBED000FC308 /* RoundedOutlineButton.swift */,
 				27721F9425A0CBED000FC308 /* View+debug.swift */,
 				27108858261364550063EEDD /* SearchField.swift */,
+				2784E81E2770E52B00879182 /* RunningInPreview.swift */,
 			);
 			name = Styling;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				274158512597B92C00A7CD7F /* MovementParsing.swift in Sources */,
 				27721F9825A0CBED000FC308 /* View+debug.swift in Sources */,
 				274158502597B92C00A7CD7F /* ReportingStructures.swift in Sources */,
+				2784E81F2770E52B00879182 /* RunningInPreview.swift in Sources */,
 				27D2A19825DB085E00430D56 /* AlbumsListRView.swift in Sources */,
 				2741584F2597B92C00A7CD7F /* LibraryReporter.swift in Sources */,
 				274158542597B92C00A7CD7F /* ClassicalMediaLibrary.swift in Sources */,

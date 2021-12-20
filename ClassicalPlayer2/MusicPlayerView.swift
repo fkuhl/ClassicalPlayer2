@@ -12,7 +12,7 @@ struct MusicPlayerView: View {
     @Environment(\.horizontalSizeClass) var size
     
     var body: some View {
-        if musicPlayer.isActive {
+        if musicPlayer.isActive || runningInPreview() {
             if size == .compact {
                 MusicPlayerCView()
             } else {
@@ -28,8 +28,7 @@ struct MusicPlayerView_Previews: PreviewProvider {
         
         MusicPlayerView()
             .preferredColorScheme(.dark)
-            .previewLayout(.fixed(width: 960, height: 540))
-            .previewDevice("iPhone 8 Pro")
+            .previewLayout(.fixed(width: 896, height: 414))
             .environment(\.horizontalSizeClass, .regular)
             .environment(\.managedObjectContext, context)
             .environmentObject(MusicPlayer())

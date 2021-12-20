@@ -13,11 +13,13 @@ struct RegularWidthView: View {
     var body: some View {
         NavigationView {
             SidebarView()
-            Image("Lama_asabthani")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
                 .navigationTitle("")
-                .navigationBarHidden(true)
+                .navigationBarTitleDisplayMode(.inline)
+//            Image("Lama_asabthani")
+//                .resizable()
+//                .aspectRatio(contentMode: .fill)
+//                .navigationTitle("")
+//                .navigationBarHidden(true)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

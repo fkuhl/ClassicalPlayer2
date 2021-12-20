@@ -61,8 +61,8 @@ struct DataAvailableView_Previews: PreviewProvider {
         
         DataAvailableView()
             .preferredColorScheme(.dark)
-            .previewLayout(.fixed(width: 960, height: 540))
-            .previewDevice("iPhone 8 Pro")
+            //logical size of XS Max
+            .previewLayout(.fixed(width: 896, height: 414))
             .environment(\.horizontalSizeClass, .regular)
             .environment(\.managedObjectContext, context)
             .environmentObject(MusicPlayer())
