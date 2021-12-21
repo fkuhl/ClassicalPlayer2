@@ -15,7 +15,7 @@ import CoreData
 struct SongsView: View, FilterUpdater {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject private var musicPlayer: MusicPlayer
-    @Environment(\.horizontalSizeClass) var size
+    @Environment(\.horizontalSizeClass) var horizontalSize
     private let sectionCount = 15 //a magic number chosen aesthetically.
     @State private var sort: SongSorts = .title
     @State private var songs: [Song] = []
@@ -28,7 +28,7 @@ struct SongsView: View, FilterUpdater {
     var body: some View {
         ZStack {
             VStack(alignment: .leading) {
-                if size == .compact {
+                if horizontalSize == .compact {
                     cList
                 } else {
                     rGrid

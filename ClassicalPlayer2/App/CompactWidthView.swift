@@ -96,8 +96,9 @@ struct CompactWidthView_Previews: PreviewProvider {
         
         CompactWidthView()
             .preferredColorScheme(.dark)
-            .previewLayout(.sizeThatFits)
-            .previewDevice("iPhone 11 Pro Max")
+            .previewLayout(.fixed(width: 414, height: 896))
+            .environment(\.horizontalSizeClass, .compact)
+            .environment(\.verticalSizeClass, .regular)
             .environment(\.managedObjectContext, context)
             .environmentObject(MusicPlayer())
     }

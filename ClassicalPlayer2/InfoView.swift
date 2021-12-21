@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct InfoView: View {
-    @Environment(\.horizontalSizeClass) var size
+    @Environment(\.horizontalSizeClass) var horizontalSize
+    @Environment(\.verticalSizeClass) var verticallSize
     @Environment(\.sizeCategory) var sizeCategory
     @EnvironmentObject private var musicPlayer: MusicPlayer
     @ObservedObject var mediaLibrary = ClassicalMediaLibrary.shared
@@ -17,19 +18,36 @@ struct InfoView: View {
     @ScaledMetric(relativeTo: .body) var datumStringWidth: CGFloat = 70
 
     var body: some View {
-        VStack {
-            header
-            libraryInfo
-            Button(action: reloadLibrary) {
-                Text("Reload Music Library").font(.headline)
+        if verticallSize == .regular {
+            VStack {
+                header
+                libraryInfo
+                Button(action: reloadLibrary) {
+                    Text("Reload Music Library").font(.headline)
+                }
+                .padding()
+                Spacer()
             }
-            .padding()
-            Spacer()
+            .navigationTitle("")
+            //Makes the space for the invisible title smaller!
+            .navigationBarTitleDisplayMode(.inline)
+        } else {
+            HStack {
+                VStack {
+                    header
+                    libraryInfo
+                        .padding()
+                    Spacer()
+                }
+                Button(action: reloadLibrary) {
+                    Text("Reload Library").font(.headline)
+                }.padding()
+                Spacer()
+            }
+            .navigationTitle("")
+            //Makes the space for the invisible title smaller!
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationTitle("")
-        //Makes the space for the invisible title smaller!
-        .navigationBarTitleDisplayMode(.inline)
-        //Don't hide the bar: you need the back button! .navigationBarHidden(true)
         /**
          Here you might expect a ProgressView that would appear when the library is reloaded.
          There is already a ProgressView in the view hierarchy; see DataAvailableView.
@@ -151,6 +169,14 @@ struct InfoView: View {
 struct InfoView_Previews: PreviewProvider {
     
     static var previews: some View {
+        InfoView()
+            .padding()
+            .preferredColorScheme(.dark)
+            .previewLayout(.fixed(width: 896, height: 414))
+            .environment(\.horizontalSizeClass, .regular)
+            .environment(\.verticalSizeClass, .compact)
+            .environmentObject(MusicPlayer())
+        
         InfoView()
             .padding()
             .background(Color(.systemBackground))

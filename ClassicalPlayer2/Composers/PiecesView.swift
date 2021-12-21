@@ -97,6 +97,7 @@ struct PiecesView_Previews: PreviewProvider {
 }
 
 struct PiecesListView: View {
+    @Environment(\.verticalSizeClass) var verticalSize
     let columns = [ GridItem(.adaptive(minimum: 170), alignment: .topLeading) ]
     var pieces: [Piece]
     var sectionMarkers: [(label: String, id: Piece)]
@@ -117,7 +118,9 @@ struct PiecesListView: View {
                     }.frame(maxWidth: .infinity)
                     .padding(.horizontal)
                 }
-                SectionIndexTitles(proxy: proxy, markers: sectionMarkers)
+                if verticalSize == .regular {
+                    SectionIndexTitles(proxy: proxy, markers: sectionMarkers)
+                }
             }
         }
     }

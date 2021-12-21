@@ -94,16 +94,18 @@ struct ComposersCView_Previews: PreviewProvider {
     static var previews: some View {
         let context = PersistenceController.preview.container.viewContext
         
-        Group {
-            ComposersCView()
-                .environment(\.managedObjectContext, context)
-                .environmentObject(MusicPlayer())
-        }
+        ComposersCView()
+            .previewLayout(.fixed(width: 896, height: 414))
+            .environment(\.horizontalSizeClass, .regular)
+            .environment(\.verticalSizeClass, .compact)
+            .environment(\.managedObjectContext, context)
+            .environmentObject(MusicPlayer())
     }
 }
 
 struct ComposersListCView: View {
-    @Environment(\.horizontalSizeClass) var size
+    @Environment(\.horizontalSizeClass) var horizontalSize
+    @Environment(\.verticalSizeClass) var verticalSize
     var composers: [Composer]
     var sectionMarkers: [(label: String, id: Composer)]
     @Binding var showingError: Bool
@@ -121,7 +123,9 @@ struct ComposersListCView: View {
                         }
                     }
                 }
-                SectionIndexTitles(proxy: proxy, markers: sectionMarkers)
+                if verticalSize == .regular {
+                    SectionIndexTitles(proxy: proxy, markers: sectionMarkers)
+                }
             }
 
         }

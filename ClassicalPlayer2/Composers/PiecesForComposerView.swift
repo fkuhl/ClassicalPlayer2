@@ -14,6 +14,7 @@ import CoreData
 
 
 struct PiecesForComposerCView: View, FilterUpdater {
+    @Environment(\.verticalSizeClass) var verticalSize
     @Environment(\.managedObjectContext) var viewContext
     private let sectionCount = 15 //a magic number chosen aesthetically.
     @State private var pieces: [Piece] = []
@@ -38,7 +39,9 @@ struct PiecesForComposerCView: View, FilterUpdater {
                     .onAppear() {
                         updateUI(filterText: "", in: viewContext)
                     }
-                SectionIndexTitles(proxy: proxy, markers: sectionMarkers)
+                if verticalSize == .regular {
+                    SectionIndexTitles(proxy: proxy, markers: sectionMarkers)
+                }
             }
         }
     }

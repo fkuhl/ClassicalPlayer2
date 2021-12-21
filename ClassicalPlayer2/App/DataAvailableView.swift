@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct DataAvailableView: View {
-    @Environment(\.horizontalSizeClass) var size
+    @Environment(\.horizontalSizeClass) var horizontalSize
+    @Environment(\.verticalSizeClass) var verticalSize
     @ObservedObject var mediaLibrary = ClassicalMediaLibrary.shared
     @State var showingDataMissing = false
     @State var showingLibraryChanged = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            if size == .compact {
-                CompactWidthView()
-            } else {
+            if horizontalSize == .regular && verticalSize == .regular {
                 RegularWidthView()
+            } else {
+                CompactWidthView()
             }
             /**
              There used to be a ProgressView ZStack'd here, but the one in ContentView
@@ -61,9 +62,27 @@ struct DataAvailableView_Previews: PreviewProvider {
         
         DataAvailableView()
             .preferredColorScheme(.dark)
-            //logical size of XS Max
+        //logical size of XS Max
             .previewLayout(.fixed(width: 896, height: 414))
             .environment(\.horizontalSizeClass, .regular)
+            .environment(\.verticalSizeClass, .compact)
+            .environment(\.managedObjectContext, context)
+            .environmentObject(MusicPlayer())
+        
+        DataAvailableView()
+            .preferredColorScheme(.dark)
+        //logical size of XS Ma x
+            .previewLayout(.fixed(width: 414, height: 896))
+            .environment(\.horizontalSizeClass, .compact)
+            .environment(\.verticalSizeClass, .compact)
+            .environment(\.managedObjectContext, context)
+            .environmentObject(MusicPlayer())
+        
+        DataAvailableView()
+            .preferredColorScheme(.dark)
+            .previewLayout(.fixed(width: 900, height: 500))
+            .environment(\.horizontalSizeClass, .regular)
+            .environment(\.verticalSizeClass, .regular)
             .environment(\.managedObjectContext, context)
             .environmentObject(MusicPlayer())
     }

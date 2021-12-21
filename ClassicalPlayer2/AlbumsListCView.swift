@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct AlbumsListCView: View {
-//    @Environment(\.horizontalSizeClass) var size
+    @Environment(\.verticalSizeClass) var verticalSize
     var albums: [Album]
     var sectionMarkers: [(label: String, id: Album)]
 
@@ -31,7 +31,9 @@ struct AlbumsListCView: View {
                         }
                     }
                 }
-                SectionIndexTitles(proxy: proxy, markers: sectionMarkers)
+                if verticalSize == .regular {
+                    SectionIndexTitles(proxy: proxy, markers: sectionMarkers)
+                }
             }
         }
     }

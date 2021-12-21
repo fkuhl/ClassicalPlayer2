@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AlbumsListRView: View {
+    @Environment(\.verticalSizeClass) var verticalSize
     var albums: [Album]
     var sectionMarkers: [(label: String, id: Album)]
 
@@ -29,7 +30,9 @@ struct AlbumsListRView: View {
                     }.frame(maxWidth: .infinity)
                     .padding(.horizontal)
                 }
-                SectionIndexTitles(proxy: proxy, markers: sectionMarkers)
+                if verticalSize == .regular {
+                    SectionIndexTitles(proxy: proxy, markers: sectionMarkers)
+                }
             }
         }
     }

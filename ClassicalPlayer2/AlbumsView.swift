@@ -15,7 +15,8 @@ import CoreData
 
 struct AlbumsView: View, FilterUpdater {
     @Environment(\.managedObjectContext) private var viewContext
-    @Environment(\.horizontalSizeClass) var size
+    @Environment(\.horizontalSizeClass) var horizontalSize
+    @Environment(\.verticalSizeClass) var verticalSize
     private let sectionCount = 15 //a magic number chosen aesthetically.
     @State private var sort: AlbumSorts = .title
     @State private var albums: [Album] = []
@@ -25,7 +26,7 @@ struct AlbumsView: View, FilterUpdater {
     
     var body: some View {
         Group {
-            if size == .compact {
+            if horizontalSize == .compact {
                 cList
             } else {
                 rGrid
@@ -57,7 +58,32 @@ struct AlbumsView: View, FilterUpdater {
     }
     
     private var rGrid: some View {
-        //We got here through RegularWidthView, which has a NavView
+        Group {
+            if horizontalSize == .regular && verticalSize == .compact {
+                //big-phone landscape mode: need a NavView
+                NavigationView {
+                    AlbumsListRView(albums: albums, sectionMarkers: sectionMarkers)
+                        .navigationTitle("Albums by \(sort.fieldName)")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar(content: {
+                            ToolbarItem(placement: .navigationBarLeading) { searchField }
+                            ToolbarItem(placement: .navigationBarTrailing) { sortMenu }
+                        })
+                }.navigationViewStyle(StackNavigationViewStyle())
+            } else {
+                //We got here through RegularWidthView, which has a NavView
+                AlbumsListRView(albums: albums, sectionMarkers: sectionMarkers)
+                    .navigationTitle("Albums by \(sort.fieldName)")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar(content: {
+                        ToolbarItem(placement: .navigationBarLeading) { searchField }
+                        ToolbarItem(placement: .navigationBarTrailing) { sortMenu }
+                    })
+            }
+        }
+    }
+    
+    private var rGridGuts: some View {
         AlbumsListRView(albums: albums, sectionMarkers: sectionMarkers)
             .navigationTitle("Albums by \(sort.fieldName)")
             .navigationBarTitleDisplayMode(.inline)

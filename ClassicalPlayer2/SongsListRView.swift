@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SongsListRView: View {
+    @Environment(\.verticalSizeClass) var verticalSize
     @EnvironmentObject private var musicPlayer: MusicPlayer
     @Binding var showingTrackMissing: Bool
     @Binding var songs: [Song]
@@ -29,7 +30,9 @@ struct SongsListRView: View {
                         .onAppear { scrollToPlaying(value: scrollValue) }
                         .onChange(of: songs) { _ in scrollToPlaying(value: scrollValue) }
                     }.frame(maxWidth: .infinity)
-                    SectionIndexTitles(proxy: scrollValue, markers: sectionMarkers)
+                    if verticalSize == .regular {
+                        SectionIndexTitles(proxy: scrollValue, markers: sectionMarkers)
+                    }
                 }
             }
         }
