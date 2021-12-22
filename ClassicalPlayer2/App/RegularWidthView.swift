@@ -13,6 +13,7 @@ struct RegularWidthView: View {
     var body: some View {
         NavigationView {
             SidebarView()
+            PiecesView(sort: .composer)  //the default choice
         }
         ///Sidebar nav shouldn't stack views.
         //.navigationViewStyle(StackNavigationViewStyle())
