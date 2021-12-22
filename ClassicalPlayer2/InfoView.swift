@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InfoView: View {
     @Environment(\.horizontalSizeClass) var horizontalSize
-    @Environment(\.verticalSizeClass) var verticallSize
+    @Environment(\.verticalSizeClass) var verticalSize
     @Environment(\.sizeCategory) var sizeCategory
     @EnvironmentObject private var musicPlayer: MusicPlayer
     @ObservedObject var mediaLibrary = ClassicalMediaLibrary.shared
@@ -18,7 +18,7 @@ struct InfoView: View {
     @ScaledMetric(relativeTo: .body) var datumStringWidth: CGFloat = 70
 
     var body: some View {
-        if verticallSize == .regular {
+        if verticalSize == .regular {
             VStack {
                 header
                 libraryInfo

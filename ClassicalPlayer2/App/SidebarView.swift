@@ -56,8 +56,11 @@ struct SidebarView: View {
 }
 
 struct SidebarView_Previews: PreviewProvider {
+    static let player = MusicPlayer()
+    
     static var previews: some View {
         SidebarView()
+            .environmentObject(player)
             .padding()
             .background(Color(.systemBackground))
             .makeForPreviewProvider()

@@ -13,7 +13,9 @@ struct RegularWidthView: View {
     var body: some View {
         NavigationView {
             SidebarView()
-        }.navigationViewStyle(StackNavigationViewStyle())
+        }
+        ///Sidebar nav shouldn't stack views.
+        //.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -23,9 +25,6 @@ struct RegularWidthView_Previews: PreviewProvider {
         
         RegularWidthView()
             .padding()
-            .background(Color(.systemBackground))
-            .makeForPreviewProvider()
-            //.previewLayout(.sizeThatFits)
             .environment(\.managedObjectContext, context)
             .environmentObject(MusicPlayer())
             //doesn't actually go to landscape

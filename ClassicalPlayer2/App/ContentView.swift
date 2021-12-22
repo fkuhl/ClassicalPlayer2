@@ -66,10 +66,12 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environmentObject(MusicPlayer())
             .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
                         .previewDisplayName("iPhone 12")
         
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environmentObject(MusicPlayer())
             .previewDevice(PreviewDevice(rawValue: "iPad Pro 9.7"))
                         .previewDisplayName("iPad")
             .previewLayout(.fixed(width: 1024, height: 768))
