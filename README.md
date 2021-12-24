@@ -1,4 +1,4 @@
-# ClassicalPlayer2
+# ClassicalPlayer
 
 A Mac Catalyst version of ClassicalPlayer.
 

@@ -92,10 +92,10 @@ struct InfoView: View {
     
     private var textStack: some View {
         VStack(alignment: .leading) {
-            Text("ClassicalPlayer2")
+            Text("ClassicalPlayer")
                 .font(.headline)
                 .padding(.bottom)
-            Text("Copyright © 2021")
+            Text("Copyright © 2021–22")
                 .font(.caption)
             Text("TyndaleSoft LLC")
                 .font(.caption)
